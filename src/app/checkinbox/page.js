@@ -3,7 +3,7 @@ import React, { createContext, useContext } from 'react'
 import { SignupContext } from '../context/SignContext'
 
 export default function CheckInbox() {
-  // const {user,setUser} = createContext(SignupContext)
+  const {user,setUser} = createContext(SignupContext)
   const {email,setEmail} = useContext(SignupContext)
   return (
     <div className='flex flex-col items-center justify-center min-h-screen py-2'>
