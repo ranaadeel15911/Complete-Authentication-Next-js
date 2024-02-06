@@ -28,6 +28,7 @@ export default function Login() {
       const response = await axios.post("/api/users/login",user,{
         headers:{
           'Cache-Control': 'no-cache',
+        }
         })
       // toast('Successfully Loged In', {
       //   icon: '✅',
