@@ -23,11 +23,12 @@ export default function ProfilePage() {
     }
 
     const getUserDetails = async () => {
-        const res = await axios.get('/api/users/me')
-        console.log(res.data);
-        setData(res.data.data._id)
-        setEmail(res.data.data.email)
-        setUsername(res.data.data.username)
+       const res = await fetch('/api/users/me',{cache:"no-cache"})
+        let data = await res.json()
+        console.log(data.data);
+        setData(data.data._id)
+        setEmail(data.data.email)
+        setUsername(data.data.username)
     }
     // async function abc (){
     //     const res = await axios.get('/api/users/me')
