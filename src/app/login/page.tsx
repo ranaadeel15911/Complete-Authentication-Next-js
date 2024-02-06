@@ -2,6 +2,8 @@
 import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
+
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 
@@ -25,11 +27,7 @@ export default function Login() {
     console.log(user.email,user.password)
     try {
       setLoading(true)
-      const response = await axios.post("/api/users/login",user,{
-        headers:{
-          'Cache-Control': 'no-cache',
-        }
-        })
+      const response = await axios.post("/api/users/login",user)
       // toast('Successfully Loged In', {
       //   icon: '✅',
       // });  
