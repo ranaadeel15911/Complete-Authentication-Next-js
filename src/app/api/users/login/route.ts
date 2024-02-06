@@ -41,16 +41,13 @@ return NextResponse.json({error: "Firstly verify your email"}, {status: 500})
             email: user.email
         }
         //create token
-        const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!)
+                const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET!, {expiresIn: "20d"})
 
         const response = NextResponse.json({
             message: "Login successful",
             success: true,
         })
-        response.cookies.set("token", token, {
-            httpOnly: true
-            
-        })
+        response.cookies.set("token", token)
         return response;
 
     } catch (error: any) {
