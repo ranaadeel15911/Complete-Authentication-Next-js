@@ -25,7 +25,10 @@ export default function Login() {
     console.log(user.email,user.password)
     try {
       setLoading(true)
-      const response = await axios.post("/api/users/login",user)
+      const response = await axios.post("/api/users/login",user,{
+        headers:{
+          'Cache-Control': 'no-cache',
+        })
       // toast('Successfully Loged In', {
       //   icon: '✅',
       // });  
