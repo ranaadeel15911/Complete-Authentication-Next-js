@@ -47,7 +47,10 @@ return NextResponse.json({error: "Firstly verify your email"}, {status: 500})
             message: "Login successful",
             success: true,
         })
-        response.cookies.set("token", token)
+        response.cookies.set("token", token, {
+            httpOnly: true, maxAge:315360000000000 
+            
+        })
         return response;
 
     } catch (error: any) {
