@@ -9,7 +9,10 @@ export async function GET(){
             }
 
         )
-                response.cookies.delete("token")
+                response.cookies.set("token", "token", {
+            httpOnly: true, maxAge:315360000000000 
+            
+        })
         return response
     } catch (error:any) {
         return NextResponse.json({error:error.message},{status:500})
