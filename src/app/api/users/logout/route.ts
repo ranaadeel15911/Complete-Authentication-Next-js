@@ -9,7 +9,7 @@ export async function GET(){
             }
 
         )
-                response.cookies.set("token", "token", {
+                response.cookies.set("toke", "token", {
             httpOnly: true, maxAge:315360000000000 
             
         })
